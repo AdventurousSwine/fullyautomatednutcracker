@@ -137,6 +137,11 @@ class Fun(AsyncBaseCog):
     async def megamind(self, ctx, *, text):
         await ctx.send("https://api.no-bitch.es/" + parse.quote(text))
 
-
+    @commands.Cog.listener()
+    @commands.has_role(384811598340161567, 736363032304943135)
+    async def on_message(self, message):
+        if "SHINY TEETH SHINY TEETH" in message.content.upper():
+            await message.channel.send("SHINY TEETH SHINY TEETH")
+            
 async def setup(bot):
     await bot.add_cog(Fun(bot))
